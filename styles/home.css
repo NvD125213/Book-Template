@@ -1,0 +1,448 @@
+@import url('../styles/header.css');
+
+.blog-first {
+    padding: 30px 0 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 8px;
+}
+
+.slider {
+    width: 840px;
+    max-width: 100vw;
+    height: 530px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider .list {
+    position: absolute;
+    width: max-content;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
+}
+
+
+.slider .list img {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .buttons {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider .buttons button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.slider .dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.slider .dots li {
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.slider .dots li.active {
+    width: 30px;
+}
+
+
+.card {
+    width: 500px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+}
+
+.card-img-top {
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
+.card-body {
+    padding: 8px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-time {
+    font-size: 14px;
+    color: #666;
+}
+
+.item-card {
+    padding: 14px 0;
+    border-bottom: solid 1px #BBBBBF;
+}
+
+.item-card:last-child {
+    border-bottom: 0;
+}
+
+.author-features,
+.newbook-features {
+    padding: 30px 0;
+    width: calc(100% - 128px);
+    margin: auto;
+}
+
+.author-features .title-border,
+.newbook-features .title-border {
+    margin-bottom: 28px;
+
+}
+
+.title-border {
+    border-top: solid 2px var(--main-color);
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-module {
+    font-size: 28px;
+    color: var(--main-color);
+    margin-bottom: 0;
+    padding-top: 10px;
+}
+
+.link-more {
+    font-size: 15px;
+    color: var(--main-color);
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.link-more i {
+    width: 23px;
+    height: 23px;
+    margin-left: 10px;
+}
+
+.slider-author {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 5px;
+    padding: 5px;
+
+}
+
+.slider-newbook {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 5px;
+    padding: 5px;
+
+}
+
+.item-author,
+.item-newbook {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.thumb {
+    display: flex;
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 150px;
+    overflow: hidden;
+    background: #f4f4f4;
+    margin-bottom: 16px;
+    transition: all 0.8s;
+}
+
+
+
+.thumb img {
+    max-width: 100%;
+    width: auto;
+    height: unset;
+    object-fit: cover;
+}
+
+.thumb-b {
+    display: flex;
+    height: 250px;
+    width: 200px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #f4f4f4;
+    margin-bottom: 16px;
+    transition: all 0.8s;
+}
+
+.thumb-b img {
+    max-width: 100%;
+    width: auto;
+    height: unset;
+    object-fit: cover;
+}
+
+.item-newbook .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* Màu nền mờ */
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.price-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+    gap: 8px;
+}
+
+.new-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--main-color);
+    /* Red for the new price */
+}
+
+.old-price {
+    font-size: 14px;
+    color: #757575;
+    /* Gray for the old price */
+    text-decoration: line-through;
+}
+
+/* Nút "Thêm vào giỏ hàng" */
+.overlay .add-to-cart {
+    background-color: var(--main-color);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Link "Chi tiết sản phẩm" */
+.overlay .view-details {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.overlay .view-details:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hiển thị overlay khi hover vào item */
+.item-newbook:hover .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.info {
+    padding: 60px 0;
+    width: calc(100% - 128px);
+    margin: auto;
+}
+
+.container-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px;
+    padding: 5px;
+
+}
+
+.detail-info {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+}
+
+.detail-info h2 {
+    color: var(--main-color);
+    font-size: 28px;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.detail-info span {
+    color: var(--main-color);
+    font-size: 16px;
+    line-height: 26px;
+    display: block;
+    font-style: italic;
+}
+
+.short-content {
+    padding-top: 19px;
+    font-size: 16px;
+    line-height: 26px;
+    color: #151515;
+    padding-right: 137px;
+    margin-bottom: 41px;
+}
+
+.button-default {
+    padding: 0 20px;
+    border: solid 1px var(--main-color);
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background: var(--main-color);
+    border-radius: 7px;
+    width: 177px;
+    height: 48px;
+    border-radius: 3px;
+    line-height: 48px;
+}
+
+.navbar-header {
+    position: relative;
+}
+
+/* Hiển thị submenu khi hover chuột vào menu cha */
+.navbar-header ul li:hover .submenu {
+    display: flex;
+}
+
+.submenu {
+    display: none;
+    top: 70px;
+    transform: translateX(0%);
+    position: absolute;
+    /* Hiển thị ngay dưới menu cha */
+    left: 0;
+    background-color: #f9f9f9;
+    /* Màu nền submenu */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+    width: 1024px;
+    transition: none 1s ease, opacity 0.2s ease;
+}
+
+.submenu ul {
+    padding: 10px;
+}
+
+.submenu .level0 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.submenu .level1 {
+    flex: 1;
+}
+
+.submenu .level1 h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.submenu .level1 h4 a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.submenu .level2 {
+    margin-bottom: 5px;
+}
+
+.submenu .level2 a {
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.submenu .level2 a:hover {
+    color: var(--main-color);
+}
+
+.submenu .icon {
+    margin-left: 5px;
+    font-size: 12px;
+    color: #999;
+}
+
+
+@media screen and (max-width: 768px) {
+    .slider {
+        height: 400px;
+    }
+}

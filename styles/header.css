@@ -1,0 +1,124 @@
+/* CSS cơ bản đã có */
+.container {
+    display: flex;
+    height: 90px;
+    border-bottom: solid 2px var(--main-color);
+    padding: 0 10px;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Đảm bảo các thành phần xuống hàng khi màn hình nhỏ */
+}
+
+.logo {
+    height: 88px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.navbar-header {
+    display: flex;
+    align-items: center;
+    height: 88px;
+    flex-wrap: wrap;
+    /* Tự động xuống hàng */
+    justify-content: center;
+    text-align: center;
+}
+
+.navbar-header ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    /* Đảm bảo menu xuống hàng khi cần */
+}
+
+.navbar-header ul li {
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-group {
+    position: relative;
+
+}
+
+.form-group i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.form-control {
+    width: 300px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border: 1px solid #ced4da;
+    border-radius: 1.5rem;
+}
+
+.user-header {
+    margin-left: 10px;
+}
+
+.user-header i {
+    padding-left: 6px;
+}
+
+/* Media Query cho màn hình nhỏ hơn */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        /* Đưa các phần tử thành cột */
+        height: auto;
+        padding: 10px;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+        /* Khoảng cách giữa logo và menu */
+    }
+
+    .navbar-header ul {
+        flex-direction: column;
+        /* Menu dọc */
+        align-items: center;
+    }
+
+    .navbar-header ul li {
+        padding: 0.5rem 0;
+        /* Tăng khoảng cách giữa các mục */
+    }
+
+    .form-group {
+        margin-left: 0;
+        width: 100%;
+        /* Đảm bảo form tìm kiếm chiếm toàn bộ chiều ngang */
+    }
+
+    .form-control {
+        width: 100%;
+        /* Input chiếm 100% chiều ngang */
+    }
+}
+
+/* Media Query cho màn hình cực nhỏ (điện thoại dưới 480px) */
+@media (max-width: 480px) {
+    .navbar-header ul li {
+        font-size: 0.9rem;
+        /* Giảm kích thước chữ */
+    }
+
+    .form-control {
+        font-size: 0.8rem;
+        /* Giảm kích thước input */
+    }
+}

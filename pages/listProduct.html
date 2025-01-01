@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/listProduct.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="header"></div>
+    <main class="listProduct">
+        <section class="listproduct-breadcumb bg-breadcumb">
+            <nav class="breadcrumb">
+                <a href="#" class="breadcrumb-item">Trang chủ</a>
+                <a href="#" class="breadcrumb-item">Tất cả sản phẩm</a>
+
+            </nav>
+        </section>
+        <section class="breadcumb-img">
+            <div class="banner-col">
+                <figure class="d-block a-center">
+                    <a href="#" title="">
+                        <img src="//bizweb.dktcdn.net/100/363/455/themes/918830/assets/banner-col.jpg?1724988401192"
+                            alt="">
+                    </a>
+                </figure>
+            </div>
+        </section>
+
+        <section class="bg-colection">
+            <div class="filter-sidebar">
+                <h2>Tìm kiếm </h2>
+                <!-- Quốc gia -->
+                <div class="filter-group">
+                    <h3>Quốc gia</h3>
+                    <label>
+                        <input type="checkbox" name="country" value="usa"> USA
+                    </label>
+                    <label>
+                        <input type="checkbox" name="country" value="uk"> UK
+                    </label>
+                    <label>
+                        <input type="checkbox" name="country" value="france"> Pháp
+                    </label>
+                    <label>
+                        <input type="checkbox" name="country" value="japan"> Nhật
+                    </label>
+                </div>
+                <!-- Mức giá -->
+                <div class="filter-group">
+                    <h3>Mức giá</h3>
+                    <label>
+                        <input type="radio" name="price" value="low"> Dưới 50.000 đ
+                    </label>
+                    <label>
+                        <input type="radio" name="price" value="medium"> 50.000 đ - 100.000 đ
+                    </label>
+                    <label>
+                        <input type="radio" name="price" value="high"> Trên 100.000 đ
+                    </label>
+                </div>
+            </div>
+            <div class="list-filter">
+                <div class="sort-bar">
+                    <div class="sort-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-layers" viewBox="0 0 16 16">
+                            <path
+                                d="M8.493.75a1 1 0 0 0-.986 0l-6.5 3.25a1 1 0 0 0 0 1.8l6.5 3.25a1 1 0 0 0 .986 0l6.5-3.25a1 1 0 0 0 0-1.8L8.493.75zM8 2.058L3.223 4.5 8 6.942l4.777-2.442L8 2.058zM.651 8.357a1 1 0 0 1 1.342-.447L8 11.058l6.007-3.148a1 1 0 0 1 .895 1.79l-6.5 3.25a1 1 0 0 1-.986 0l-6.5-3.25a1 1 0 0 1-.447-1.342z" />
+                        </svg>
+                    </div>
+                    <span class="sort-label">Sắp xếp theo</span>
+                    <button class="sort-button active">Mặc định</button>
+                    <button class="sort-button">Sách mới</button>
+                    <button class="sort-button">Giá thấp - cao</button>
+                    <button class="sort-button">Giá cao - thấp</button>
+                </div>
+
+                <div id="grid-container" class="grid-container">
+                    <!-- Render 20 sản phẩm -->
+
+                </div>
+
+                <!-- Pagination -->
+                <div id="pagination" class="pagination">
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <div id="footer"></div>
+    <script type="module">
+        // Load Header and Footer
+        document.getElementById('header').innerHTML = await fetch('../components/header.html').then(res => res.text());
+        document.getElementById('footer').innerHTML = await fetch('../components/footer.html').then(res => res.text());
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lấy nút toggle và menu
+            const toggleButton = document.querySelector('.menu-toggle');
+            const navbarHeader = document.querySelector('.navbar-header');
+
+            // Kiểm tra xem phần tử có tồn tại không
+            if (toggleButton && navbarHeader) {
+                // Thêm sự kiện click cho nút toggle
+                toggleButton.addEventListener('click', () => {
+                    navbarHeader.classList.toggle('active'); // Thêm/xóa class 'active'
+                });
+            } else {
+                console.error('menu-toggle hoặc navbar-header không tồn tại trong DOM');
+            }
+        });
+        document.querySelectorAll('.navbar-header ul li').forEach((item) => {
+            item.addEventListener('click', () => {
+                const submenu = item.querySelector('.submenu');
+                if (submenu) {
+                    // Chuyển đổi giữa hiển thị và ẩn
+                    if (submenu.style.display === 'flex') {
+                        submenu.style.display = 'none';
+                    } else {
+                        submenu.style.display = 'flex';
+                    }
+                }
+            });
+
+        });
+
+
+
+
+    </script>
+    <script src="../scripts/header.js"></script>
+    <script src="../scripts/listProduct.js"></script>
+</body>
+
+</html>
