@@ -1,0 +1,167 @@
+.productDetail {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.container-detail {
+    margin: auto;
+    width: calc(100% - 228px);
+}
+
+.row-detail {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+}
+
+.product-detail-left {
+    width: 100%;
+    height: auto;
+}
+
+.product-detail-left img {
+    object-fit: cover;
+}
+
+.product-detail-right {
+    padding: 0 64px;
+}
+
+.product-detail-right h1 {
+    font-size: 30px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.product-detail-right .author {
+    font-size: 16px;
+}
+
+.price-box-detail {
+    padding: 20px 0 15px;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-size: 30px;
+    color: var(--main-color);
+}
+
+.group-price {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.old-price {
+    margin-left: 10px;
+    color: var(--text-color);
+}
+
+.product-price-old {
+    font-size: 20px;
+    text-decoration: line-through;
+    color: #777777;
+}
+
+.discount {
+    width: 49px;
+    height: 23px;
+    color: #fff;
+    background: #EB5757;
+    line-height: 23px;
+    font-size: 12px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    margin-left: 15px;
+    position: relative;
+    top: -3px;
+}
+
+.btn-mua {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.btn-mua .btn-lg {
+    border: solid 1px var(--main-color);
+    color: var(--main-color);
+    height: 65px;
+    background: #fff;
+    width: 224px;
+    border-radius: 5px;
+    display: inline;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 0;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: solid 1px var(--main-color);
+    box-shadow: none;
+    outline: none;
+    margin-right: 10px;
+}
+
+.btn-mua .btn-lg:disabled {
+    padding: 0 20px;
+    cursor: default;
+}
+
+.shop-in-ecommerce {
+    font-size: 16px;
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tab {
+    font-size: 16px;
+    padding-right: 42px;
+}
+
+.child-content {
+    margin-top: 70px;
+    display: grid;
+    font-size: 16px;
+    grid-template-columns: 4fr 2fr;
+    gap: 16px;
+}
+
+.title-tab {
+    font-size: 20px;
+    color: var(--main-color);
+    display: flex;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.book-info-detail {
+    padding: 15px 20px 5px;
+    border: solid 1px #BBBBBF;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+.book-info-detail li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.tab p {
+    line-height: 28px;
+}
+
+.book-info-detail {
+    list-style: circle !important;
+    color: black;
+}
